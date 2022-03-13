@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Job Alley</string>
+    <string name="or">OR</string>
+    <string name="new_user_sign_up">New User? SIGN UP?</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="logo">logo</string>
+    <string name="registration">Registration</string>
+    <string name="name">Name</string>
+    <string name="username">username</string>
+    <string name="gender">Gender</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="age">Age</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="address">Address</string>
+    <string name="tel_no">Tel.no</string>
+    <string name="education_level">Education Level</string>
+    <string name="_0123456789">0123456789</string>
+    <string name="comfirm_password">Comfirm Password</string>
+    <string name="upload_resume">Upload Resume</string>
+
+    <string-array name="educationLv">
+        <item>Primary School</item>
+        <item>Secondary School</item>
+        <item>Diploma</item>
+        <item>Degree</item>
+        <item>Master</item>
+        <item>Doctor of Philosophy</item>
+    </string-array>
+</resources>
