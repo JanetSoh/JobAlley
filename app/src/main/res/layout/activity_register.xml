@@ -28,7 +28,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="@string/name"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_register" />
 
@@ -40,7 +40,6 @@
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="@string/name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingStart="20dp"
@@ -48,26 +47,26 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColorHint="#00838F"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/text_name"
         app:layout_constraintTop_toBottomOf="@+id/text_register"
-        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,TextContrastCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,LabelFor,TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/text_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:text="@string/gender"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_name" />
 
     <RadioGroup
         android:id="@+id/radio_gender"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
@@ -78,8 +77,9 @@
 
         <RadioButton
             android:id="@+id/gender_female"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/input_bg"
             android:paddingStart="20dp"
             android:paddingLeft="10dp"
@@ -87,19 +87,22 @@
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
             android:text="@string/female"
-            android:textColor="#00838F" />
+            android:textColor="#00838F"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <RadioButton
             android:id="@+id/gender_male"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/input_bg"
             android:paddingStart="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="10dp"
             android:text="@string/male"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            android:textColor="#00838F"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
     </RadioGroup>
 
     <TextView
@@ -109,6 +112,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
         android:text="@string/date_of_birth"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_gender" />
 
@@ -116,8 +120,8 @@
         android:id="@+id/editTextDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
@@ -131,15 +135,17 @@
         android:paddingBottom="10dp"
         android:textColorHint="#00838F"
         app:layout_constraintStart_toEndOf="@+id/text_dob"
-        app:layout_constraintTop_toBottomOf="@+id/radio_gender" />
+        app:layout_constraintTop_toBottomOf="@+id/radio_gender"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/text_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
         android:text="@string/address"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_dob" />
 
@@ -148,25 +154,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="@string/address"
-        android:inputType="textMultiLine"
+        android:inputType="textPostalAddress"
         android:minHeight="48dp"
         android:paddingStart="20dp"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toEndOf="@+id/text_address"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     <TextView
         android:id="@+id/text_tel"
@@ -175,8 +178,10 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:text="@string/tel_no"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_address" />
+
 
     <EditText
         android:id="@+id/editTextTel"
@@ -186,7 +191,6 @@
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="@string/_0123456789"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         android:paddingStart="20dp"
@@ -194,9 +198,8 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.639"
         app:layout_constraintStart_toEndOf="@+id/text_tel"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
 
@@ -206,32 +209,33 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/education_level"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_tel" />
 
     <Spinner
         android:id="@+id/spinner_educationLv"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/input_bg"
         android:contentDescription="@string/registration"
+        android:entries="@array/educationLv"
         android:minHeight="48dp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toEndOf="@+id/textEducationLv"
         app:layout_constraintTop_toBottomOf="@+id/editTextTel"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textREmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/email"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEducationLv" />
 
@@ -239,13 +243,11 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:paddingStart="20dp"
@@ -254,18 +256,18 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/textREmail"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_educationLv"
-        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck,TextContrastCheck,TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_educationLv" />
 
     <TextView
         android:id="@+id/textRPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
         android:text="@string/password"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textREmail" />
 
@@ -273,12 +275,10 @@
         android:id="@+id/editRPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="12dp"
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="@string/password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingStart="20dp"
@@ -286,18 +286,18 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        app:layout_constraintStart_toEndOf="@+id/textRPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <TextView
         android:id="@+id/textRCPassword"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/comfirm_password"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/confirm_password"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRPassword" />
 
@@ -310,7 +310,6 @@
         android:autofillHints=""
         android:background="@drawable/input_bg"
         android:ems="10"
-        android:hint="@string/comfirm_password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingStart="20dp"
@@ -318,22 +317,45 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColor="@color/material_dynamic_neutral50"
-        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toEndOf="@+id/textRCPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editRPassword"
-        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/editRPassword"/>
 
     <TextView
         android:id="@+id/textRResume"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
         android:text="@string/upload_resume"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRCPassword" />
+
+    <Button
+        android:id="@+id/register_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/input_bg"
+        android:text="@string/register_now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/upload_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_bg"
+        android:text="UPLOAD PDF RESUME"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toEndOf="@+id/textRResume"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRCPassword2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,13 @@
     <string name="address">Address</string>
     <string name="tel_no">Tel.no</string>
     <string name="education_level">Education Level</string>
-    <string name="_0123456789">0123456789</string>
-    <string name="comfirm_password">Comfirm Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="upload_resume">Upload Resume</string>
+    <string name="sign_in_with_facebook">SIGN IN WITH FACEBOOK</string>
+    <string name="sign_in_with_google">SIGN IN WITH GOOGLE</string>
+    <string name="register_now">Register Now</string>
+    <string name="_0123456789">0123456789</string>
+    <string name="joyce123_gmail_com">joyce123@gmail.com</string>
 
     <string-array name="educationLv">
         <item>Primary School</item>
