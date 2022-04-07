@@ -1,9 +1,17 @@
 package com.example.joballey
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
+import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.joballey.data.UserData
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+
 
 
 
@@ -11,12 +19,74 @@ class RegisterActivity : AppCompatActivity()
 {
 
 
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
+
+
+
+    private lateinit var name: EditText
+    private lateinit var female: RadioButton
+    private lateinit var male: RadioButton
+    private lateinit var dob: EditText
+    private lateinit var address: EditText
+    private lateinit var telNo: EditText
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+    private lateinit var confirmPassword: EditText
+
+    private lateinit var username: String
+    private lateinit var birthdate: String
+    private lateinit var useraddress: String
+    private lateinit var usertel: String
+    private lateinit var useremail: String
+    private lateinit var userpassword: String
+    private lateinit var usercpassword: String
+    private lateinit var gender: String
+    private lateinit  var eduLv: String
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        val success : TextView = findViewById(R.id.register_now)
-//        val uploadFile : Button = findViewById(R.id.upload_pdf)
+        val success: Button = findViewById(R.id.register_now)
+        val back: ImageButton = findViewById(R.id.imageBack)
+        val resume: Button = findViewById(R.id.upload_resume)
+        val spinner : Spinner = findViewById(R.id.spinner_educationLv)
+
+
+
+
+        val educationLevel = arrayOf("Primary School", "Secondary School", "Diploma", "Degree", "Master", "Doctor of Philosophy")
+        val arrayAdapter  = ArrayAdapter(this, android.R.layout.simple_spinner_item, educationLevel)
+
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = object :
+        AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                eduLv = educationLevel[p2]
+
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+        }
+
+        name = findViewById(R.id.editTextTextPersonName)
+        female = findViewById(R.id.gender_female)
+        male = findViewById(R.id.gender_male)
+        dob = findViewById(R.id.editTextDate)
+        address = findViewById(R.id.editTextTextAddress)
+        telNo = findViewById(R.id.editTextTel)
+        email = findViewById(R.id.editTextTextEmailAddress)
+        password = findViewById(R.id.editRPassword)
+        confirmPassword = findViewById(R.id.editTextRCPassword2)
+
+        auth = FirebaseAuth.getInstance()
 
 
         success.setOnClickListener {
@@ -65,7 +135,16 @@ class RegisterActivity : AppCompatActivity()
 
 
 
+        back.setOnClickListener {
+            val intent2 = Intent(this, MainActivity::class.java)
+            startActivity(intent2)
+        }
 
+        resume.setOnClickListener {
+            val intent3 = Intent(this, UploadPDFActivity::class.java)
+            startActivity(intent3)
+
+        }
 
     }
 
@@ -143,6 +222,8 @@ class RegisterActivity : AppCompatActivity()
     }
 
 }
+
+
 
 
 

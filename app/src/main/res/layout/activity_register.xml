@@ -4,20 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    tools:viewBindingIgnore="true">
+
+
+
+    <ImageButton
+        android:id="@+id/imageBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_button" />
 
 
     <TextView
         android:id="@+id/text_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
         android:text="@string/registration"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,7 +118,6 @@
             android:text="@string/male"
             android:textColor="#00838F"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
-
     </RadioGroup>
 
     <TextView
@@ -219,7 +234,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/registration"
-        android:entries="@array/educationLv"
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -318,9 +332,9 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toEndOf="@+id/textRCPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editRPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/editRPassword" />
 
     <TextView
         android:id="@+id/textRResume"
@@ -337,23 +351,26 @@
         android:id="@+id/register_now"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/input_bg"
         android:text="@string/register_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:viewBindingType="Button"/>
 
     <Button
-        android:id="@+id/upload_pdf"
+        android:id="@+id/upload_resume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
-        android:text="UPLOAD PDF RESUME"
+        android:drawableEnd="@drawable/ic_attach_file"
+        android:text="@string/upload_resume_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toEndOf="@+id/textRResume"
         app:layout_constraintTop_toBottomOf="@+id/editTextRCPassword2" />
 

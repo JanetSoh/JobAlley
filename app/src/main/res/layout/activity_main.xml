@@ -60,24 +60,24 @@
         android:textColorHint="#00838F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email"/>
+        app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+
 
     <TextView
         android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/forgot_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_password" />
-
 
     <Button
         android:id="@+id/sign_in"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/input_bg"
         android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,13 +94,13 @@
         android:textColor="?attr/colorError"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in"/>
+        app:layout_constraintTop_toBottomOf="@+id/sign_in" />
 
     <TextView
         android:id="@+id/or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:text="@string/or"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -127,15 +127,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/input_bg"
-        android:drawableBottom="@drawable/ic_google"
+        android:drawableEnd="@drawable/ic_google"
         android:text="@string/sign_in_with_google"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
