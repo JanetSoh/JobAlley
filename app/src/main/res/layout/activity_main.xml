@@ -107,15 +107,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register" />
 
+
     <Button
-        android:id="@+id/fb_sign_in"
+        android:id="@+id/login_button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/input_bg"
-        android:drawableBottom="@drawable/ic_facebook"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
         android:text="@string/sign_in_with_facebook"
-        android:textAlignment="center"
+        android:drawableEnd="@drawable/ic_facebook"
+        android:background="@drawable/input_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +133,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fb_sign_in" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
 
 
