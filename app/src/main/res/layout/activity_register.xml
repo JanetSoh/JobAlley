@@ -304,37 +304,37 @@
         app:layout_constraintStart_toEndOf="@+id/textRPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
-    <TextView
-        android:id="@+id/textRCPassword"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/confirm_password"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRPassword" />
+<!--    <TextView-->
+<!--        android:id="@+id/textRCPassword"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:text="@string/confirm_password"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textRPassword" />-->
 
-    <EditText
-        android:id="@+id/editTextRCPassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.327"
-        app:layout_constraintStart_toEndOf="@+id/textRCPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editRPassword" />
+<!--    <EditText-->
+<!--        android:id="@+id/editTextRCPassword2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:autofillHints=""-->
+<!--        android:background="@drawable/input_bg"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:paddingStart="20dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingRight="10dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.327"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textRCPassword"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editRPassword" />-->
 
     <TextView
         android:id="@+id/textRResume"
@@ -345,20 +345,19 @@
         android:text="@string/upload_resume"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRCPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/textRPassword" />
 
     <Button
         android:id="@+id/register_now"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/input_bg"
         android:text="@string/register_now"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        tools:viewBindingType="Button"/>
+        app:layout_constraintTop_toBottomOf="@+id/upload_resume"
+        tools:viewBindingType="Button" />
 
     <Button
         android:id="@+id/upload_resume"
@@ -372,7 +371,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toEndOf="@+id/textRResume"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRCPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/editRPassword" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

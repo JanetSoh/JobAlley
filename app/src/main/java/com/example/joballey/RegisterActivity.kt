@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity()
     private lateinit var telNo: EditText
     private lateinit var email: EditText
     private lateinit var password: EditText
-    private lateinit var confirmPassword: EditText
+    //private lateinit var confirmPassword: EditText
 
     private lateinit var username: String
     private lateinit var birthdate: String
@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity()
     private lateinit var usertel: String
     private lateinit var useremail: String
     private lateinit var userpassword: String
-    private lateinit var usercpassword: String
+    //private lateinit var usercpassword: String
     private lateinit var gender: String
     private lateinit  var eduLv: String
 
@@ -84,7 +84,7 @@ class RegisterActivity : AppCompatActivity()
         telNo = findViewById(R.id.editTextTel)
         email = findViewById(R.id.editTextTextEmailAddress)
         password = findViewById(R.id.editRPassword)
-        confirmPassword = findViewById(R.id.editTextRCPassword2)
+        //confirmPassword = findViewById(R.id.editTextRCPassword2)
 
         auth = FirebaseAuth.getInstance()
 
@@ -98,7 +98,7 @@ class RegisterActivity : AppCompatActivity()
             usertel = telNo.text.toString()
             useremail = email.text.toString()
             userpassword = password.text.toString()
-            usercpassword = confirmPassword.text.toString()
+            //usercpassword = confirmPassword.text.toString()
 
 
             validateName()
@@ -202,7 +202,7 @@ class RegisterActivity : AppCompatActivity()
 
     private fun validatePassword() {
         userpassword = password.text.toString()
-        usercpassword = confirmPassword.text.toString()
+       // usercpassword = confirmPassword.text.toString()
 
         if(TextUtils.isEmpty(userpassword)) {
             Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()
@@ -210,15 +210,15 @@ class RegisterActivity : AppCompatActivity()
         if(userpassword.length < 6) {
             Toast.makeText(this, "Password should be at least 6 digits", Toast.LENGTH_SHORT).show()
         }
-        if(TextUtils.isEmpty(usercpassword)) {
-            Toast.makeText(this, "Enter your confirm password", Toast.LENGTH_SHORT).show()
-        }
-        if(!userpassword.equals(usercpassword)) {
-            Toast.makeText(this, "Please same password", Toast.LENGTH_SHORT).show()
-            password.clearComposingText()
-            confirmPassword.clearComposingText()
-
-        }
+//        if(TextUtils.isEmpty(usercpassword)) {
+//            Toast.makeText(this, "Enter your confirm password", Toast.LENGTH_SHORT).show()
+//        }
+//        if(!userpassword.equals(usercpassword)) {
+//            Toast.makeText(this, "Please same password", Toast.LENGTH_SHORT).show()
+//            password.clearComposingText()
+//            confirmPassword.clearComposingText()
+//
+//        }
     }
 
 }
