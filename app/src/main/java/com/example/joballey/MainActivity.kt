@@ -20,6 +20,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.*
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.util.*
 
 
@@ -29,7 +31,6 @@ open class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var mUser: FirebaseUser
-    private lateinit var mAuthListener: FirebaseAuth.AuthStateListener
     private lateinit var callbackManager: CallbackManager
 
 
@@ -46,8 +47,8 @@ open class MainActivity : AppCompatActivity() {
         val email: EditText = findViewById(R.id.edit_email)
         val password: EditText = findViewById(R.id.edit_password)
 
-        //auth = Firebase.auth
-        auth = FirebaseAuth.getInstance()
+        auth = Firebase.auth
+        //auth = FirebaseAuth.getInstance()
 
 
         //DoGoogleSignIn()
@@ -124,6 +125,7 @@ open class MainActivity : AppCompatActivity() {
 //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        super.onActivityResult(requestCode, resultCode, data)
 //
+//
 //        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
 //        if (requestCode == RC_SIGN_IN) {
 //            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
@@ -137,9 +139,10 @@ open class MainActivity : AppCompatActivity() {
 //                Log.w(TAG, "Google sign in failed", e)
 //            }
 //        }
-////        else {
-////            callbackManager.onActivityResult(requestCode, resultCode, data)
-////        }
+//        else {
+//            callbackManager.onActivityResult(requestCode, resultCode, data)
+//        }
+//
 //    }
 //
 //    private fun firebaseAuthWithGoogle(idToken: String) {
@@ -148,11 +151,13 @@ open class MainActivity : AppCompatActivity() {
 //            .addOnCompleteListener(this) { task ->
 //                if (task.isSuccessful) {
 //                    // Sign in success, update UI with the signed-in user's information
+//                        Toast.makeText(this,"signInWithCredential:success", Toast.LENGTH_SHORT).show()
 //                    Log.d(TAG, "signInWithCredential:success")
 //                    val user = auth.currentUser
 //                    updateUI(user)
 //                } else {
 //                    // If sign in fails, display a message to the user.
+//                    Toast.makeText(this,"signInWithCredential:failure", Toast.LENGTH_SHORT).show()
 //                    Log.w(TAG, "signInWithCredential:failure", task.exception)
 //                    updateUI(null)
 //                }
@@ -167,7 +172,7 @@ open class MainActivity : AppCompatActivity() {
 //    private fun facebookLogin() {
 //        callbackManager = CallbackManager.Factory.create()
 //
-//        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email"))
+//        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email", "public_profile"))
 //        LoginManager.getInstance().registerCallback(callbackManager,
 //            object : FacebookCallback<LoginResult> {
 //                override fun onSuccess(result: LoginResult) {
@@ -200,6 +205,7 @@ open class MainActivity : AppCompatActivity() {
 //            .addOnCompleteListener(this) { task ->
 //                if (task.isSuccessful) {
 //                    // Sign in success, update UI with the signed-in user's information
+//                    Toast.makeText(this,"signInWithCredential:success", Toast.LENGTH_SHORT).show()
 //                    Log.d(TAG, "signInWithCredential:success")
 //                    val user = auth.currentUser
 //                    updateUI(user)
@@ -214,6 +220,8 @@ open class MainActivity : AppCompatActivity() {
 //                }
 //            }
 //    }
+
+
 
 
     private fun updateUI(user: FirebaseUser?) {
