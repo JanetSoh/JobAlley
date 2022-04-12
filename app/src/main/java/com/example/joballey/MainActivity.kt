@@ -6,6 +6,7 @@ package com.example.joballey
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -20,8 +21,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.*
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import java.util.*
 
 
@@ -47,8 +46,8 @@ open class MainActivity : AppCompatActivity() {
         val email: EditText = findViewById(R.id.edit_email)
         val password: EditText = findViewById(R.id.edit_password)
 
-        auth = Firebase.auth
-        //auth = FirebaseAuth.getInstance()
+        //auth = Firebase.auth
+        auth = FirebaseAuth.getInstance()
 
 
         //DoGoogleSignIn()
@@ -56,8 +55,16 @@ open class MainActivity : AppCompatActivity() {
         login.setOnClickListener {
             val useremail = email.text.toString()
             val userpassword = password.text.toString()
-            //checkUser()
-            signIn(useremail, userpassword)
+
+            //val user = auth.currentUser
+            if(TextUtils.isEmpty(useremail) && TextUtils.isEmpty(userpassword)) {
+                Toast.makeText(this, "Login failure", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                signIn(useremail, userpassword)
+
+            }
+
 
         }
 
@@ -83,15 +90,6 @@ open class MainActivity : AppCompatActivity() {
 
     }
 
-//    private fun checkUser() {
-//        val user = auth.currentUser
-//        if(user != null) {
-//            Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show()
-//        }
-//        else {
-//            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()
-//        }
-//    }
 
     private fun signIn(email: String, password:String) {
         auth.signInWithEmailAndPassword(email, password)
@@ -100,6 +98,8 @@ open class MainActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                         Toast.makeText(this, "signInWithEmail:success", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, "signInWithEmail:success")
+                    val intent7 = Intent(this, HomepageActivity::class.java)
+                    startActivity(intent7)
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
@@ -151,13 +151,15 @@ open class MainActivity : AppCompatActivity() {
 //            .addOnCompleteListener(this) { task ->
 //                if (task.isSuccessful) {
 //                    // Sign in success, update UI with the signed-in user's information
-//                        Toast.makeText(this,"signInWithCredential:success", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this,"signInWithGoogle:success", Toast.LENGTH_SHORT).show()
 //                    Log.d(TAG, "signInWithCredential:success")
+//                    val intent7 = Intent(this, HomepageActivity::class.java)
+//                    startActivity(intent7)
 //                    val user = auth.currentUser
 //                    updateUI(user)
 //                } else {
 //                    // If sign in fails, display a message to the user.
-//                    Toast.makeText(this,"signInWithCredential:failure", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this,"signInWithGoogle:failure", Toast.LENGTH_SHORT).show()
 //                    Log.w(TAG, "signInWithCredential:failure", task.exception)
 //                    updateUI(null)
 //                }
@@ -205,24 +207,26 @@ open class MainActivity : AppCompatActivity() {
 //            .addOnCompleteListener(this) { task ->
 //                if (task.isSuccessful) {
 //                    // Sign in success, update UI with the signed-in user's information
-//                    Toast.makeText(this,"signInWithCredential:success", Toast.LENGTH_SHORT).show()
-//                    Log.d(TAG, "signInWithCredential:success")
+//                    Toast.makeText(this,"signInWithFacebook:success", Toast.LENGTH_SHORT).show()
+//                    Log.d(TAG, "signInWithFacebook:success")
+//                    val intent7 = Intent(this, HomepageActivity::class.java)
+//                    startActivity(intent7)
 //                    val user = auth.currentUser
 //                    updateUI(user)
 //                } else {
 //                    // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+//                    Log.w(TAG, "signInWithFacebook:failure", task.exception)
 //                    Toast.makeText(
-//                        baseContext, "Authentication failed.",
+//                        baseContext, "signInWithFacebook:failure",
 //                        Toast.LENGTH_SHORT
 //                    ).show()
 //                    updateUI(null)
 //                }
 //            }
 //    }
-
-
-
+//
+//
+//
 
     private fun updateUI(user: FirebaseUser?) {
         if(user == null) {

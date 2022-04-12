@@ -98,7 +98,6 @@ class RegisterActivity : AppCompatActivity()
             usertel = telNo.text.toString()
             useremail = email.text.toString()
             userpassword = password.text.toString()
-            //usercpassword = confirmPassword.text.toString()
 
 
             validateName()
@@ -107,6 +106,7 @@ class RegisterActivity : AppCompatActivity()
             validateTel()
             validateEmail()
             validatePassword()
+
 
             database = FirebaseDatabase.getInstance().getReference("Users")
             val userDetails = UserData(
@@ -210,15 +210,6 @@ class RegisterActivity : AppCompatActivity()
         if(userpassword.length < 6) {
             Toast.makeText(this, "Password should be at least 6 digits", Toast.LENGTH_SHORT).show()
         }
-//        if(TextUtils.isEmpty(usercpassword)) {
-//            Toast.makeText(this, "Enter your confirm password", Toast.LENGTH_SHORT).show()
-//        }
-//        if(!userpassword.equals(usercpassword)) {
-//            Toast.makeText(this, "Please same password", Toast.LENGTH_SHORT).show()
-//            password.clearComposingText()
-//            confirmPassword.clearComposingText()
-//
-//        }
     }
 
 }
