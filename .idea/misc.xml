@@ -37,6 +37,12 @@
         <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_home_page.xml" value="0.10815602836879433" />
         <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_notification_page.xml" value="0.10815602836879433" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_save_page.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_search_page.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/list_item_save.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/list_item_search.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/notification_detail.xml" value="0.1" />
       </map>
     </option>
   </component>
