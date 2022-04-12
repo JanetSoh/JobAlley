@@ -19,7 +19,6 @@
         <entry key="..\:/Job Alley/app/src/main/res/layout/activity_fecebook_auth.xml" value="0.1" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/activity_forgot_password.xml" value="0.3333333333333333" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/activity_google_sign_in.xml" value="0.1" />
-        <entry key="..\:/Job Alley/app/src/main/res/layout/activity_homepage.xml" value="0.1796875" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/activity_main2.xml" value="0.1" />
@@ -33,6 +32,9 @@
         <entry key="..\:/Job Alley/app/src/main/res/layout/fragment_add.xml" value="0.1796875" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/fragment_list.xml" value="0.1796875" />
         <entry key="..\:/Job Alley/app/src/main/res/layout/fragment_register.xml" value="0.1796875" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_home_page.xml" value="0.10815602836879433" />
+        <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_notification_page.xml" value="0.10815602836879433" />
       </map>
     </option>
   </component>
