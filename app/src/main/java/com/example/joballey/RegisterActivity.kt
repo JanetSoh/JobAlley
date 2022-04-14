@@ -87,6 +87,7 @@ class RegisterActivity : AppCompatActivity()
         //confirmPassword = findViewById(R.id.editTextRCPassword2)
 
         auth = FirebaseAuth.getInstance()
+        val currentUser = FirebaseAuth.getInstance().currentUser
 
 
         success.setOnClickListener {
@@ -119,13 +120,20 @@ class RegisterActivity : AppCompatActivity()
                 useremail,
                 userpassword
             )
-            database.child(username).setValue(userDetails).addOnSuccessListener {
-                Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-            }
 
             auth.createUserWithEmailAndPassword(useremail, userpassword).addOnSuccessListener {
+
+            if (currentUser != null) {
+                database.child(currentUser.uid).setValue(userDetails).addOnSuccessListener {
+
+                    Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+
+                }
+            }
+
+
                 Toast.makeText(this, "createUserWithEmail: success", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "createUserWithEmail: failed", Toast.LENGTH_SHORT).show()
