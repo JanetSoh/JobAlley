@@ -2,50 +2,35 @@ package com.example.joballey
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.joballey.databinding.ActivityMain2Binding
 import com.example.joballey.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class MainActivity2:AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMain2Binding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpTabBar()
+        val bottomNavigation = binding.bottomNavigationView
+        val navController = findNavController(R.id.fragment)
+
+        bottomNavigation.setupWithNavController(navController)
+
+
 
     }
 
 
 
-    private fun setUpTabBar() {
-        val adapter=TabBarAdapter(this, tabLayout.tabCount)
-        viewPager.adapter=adapter
-
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
-            override fun onPageSelected(position: Int) {
-                tabLayout.selectTab(tabLayout.getTabAt(position))
-            }
-        })
-
-        tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener
-        {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager.currentItem=tab.position
-
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-        })
-    }
 
 }

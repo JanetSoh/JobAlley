@@ -9,10 +9,10 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.joballey.data.UserData
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-
-
+import com.google.firebase.ktx.Firebase
 
 
 class RegisterActivity : AppCompatActivity()
@@ -34,6 +34,7 @@ class RegisterActivity : AppCompatActivity()
     private lateinit var password: EditText
     //private lateinit var confirmPassword: EditText
 
+    private lateinit var uid:String
     private lateinit var username: String
     private lateinit var birthdate: String
     private lateinit var useraddress: String
@@ -64,7 +65,7 @@ class RegisterActivity : AppCompatActivity()
 
         spinner.adapter = arrayAdapter
         spinner.onItemSelectedListener = object :
-        AdapterView.OnItemSelectedListener{
+            AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 eduLv = educationLevel[p2]
 
@@ -88,10 +89,10 @@ class RegisterActivity : AppCompatActivity()
 
         auth = FirebaseAuth.getInstance()
         val currentUser = FirebaseAuth.getInstance().currentUser
+//        uid = auth.uid!!
 
 
         success.setOnClickListener {
-
             username = name.text.toString()
             gender = UserGender()
             birthdate = dob.text.toString()
@@ -123,17 +124,13 @@ class RegisterActivity : AppCompatActivity()
 
             auth.createUserWithEmailAndPassword(useremail, userpassword).addOnSuccessListener {
 
-            if (currentUser != null) {
-                database.child(currentUser.uid).setValue(userDetails).addOnSuccessListener {
-
-                    Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
-                }.addOnFailureListener {
-                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-
+                if (currentUser != null) {
+                    database.child(currentUser.uid).setValue(userDetails).addOnSuccessListener {
+                        Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
+                    }.addOnFailureListener {
+                        Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
-
-
                 Toast.makeText(this, "createUserWithEmail: success", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "createUserWithEmail: failed", Toast.LENGTH_SHORT).show()
@@ -210,7 +207,7 @@ class RegisterActivity : AppCompatActivity()
 
     private fun validatePassword() {
         userpassword = password.text.toString()
-       // usercpassword = confirmPassword.text.toString()
+        // usercpassword = confirmPassword.text.toString()
 
         if(TextUtils.isEmpty(userpassword)) {
             Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()

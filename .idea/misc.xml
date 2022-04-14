@@ -43,6 +43,22 @@
         <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/list_item_save.xml" value="0.1" />
         <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/list_item_search.xml" value="0.1" />
         <entry key="..\:/Users/HP/Documents/GitHub/JobAlley/app/src/main/res/layout/notification_detail.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/drawable/baseline_edit_24.xml" value="0.298" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/drawable/dialog_skill.xml" value="0.298" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_homepage.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/add_education.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/add_skill.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_education.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_home_page.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_skills.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_user.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/list_edu.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/list_skill.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

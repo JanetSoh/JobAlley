@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JobAlley">
         <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".HomepageActivity"
             android:exported="false" />
         <activity

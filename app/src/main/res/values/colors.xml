@@ -12,4 +12,7 @@
     <color name="red">#FF0000</color>
     <color name="darkGray">#222</color>
     <color name="underline">#DBD6D6</color>
+    <color name="blue1">#0096FF</color>
+    <color name="green">#00FF00</color>
+    <color name="grey">#52595D</color>
 </resources>

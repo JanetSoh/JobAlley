@@ -47,12 +47,18 @@
     <string name="forgot_password2">FORGOT PASSWORD</string>
     <string name="send_email">Send Email</string>
     <string name="welcome">Welcome</string>
+
+    <string name="user_name">Lam Wai Hong</string>
+    <string name="personal_detail">Say something about yourself...</string>
+    <string name="skill">Skills</string>
+    <string name="education">Education</string>
+    <string name="change_photo">Change Profile</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
-    <string name ="news_a">
+    <string name="news_a">
         SONGKHLA: The reopening of two Thailand-Malaysia land border gates on April 1 will comply with standard operating procedures (SOP) to ensure that the safety and health of tourists and locals are always protected.
         Deputy Governor of Songkhla province, Amphon Pongsuwan, said the two border gates of Sadao (Songkhla province)-Bukit Kayu Hitam (Kedah) and Wang Prachan (Satun)-Wang Kelian (Perlis) will be reopened to fully vaccinated tourists from April 1.
         He said all tourists, who will be coming through the land border gate under the “Test Go” programme, will have to apply online for the “Thailand Pass” at least seven days before travel.

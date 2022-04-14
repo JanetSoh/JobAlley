@@ -2,14 +2,16 @@ package com.example.joballey
 
 
 
-
-
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.example.joballey.UserProfilePage.UserFragment
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -21,11 +23,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.*
 
 
 open class MainActivity : AppCompatActivity() {
-
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
@@ -37,7 +42,6 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val login: TextView = findViewById(R.id.sign_in)
         val registration: TextView = findViewById(R.id.register)
         val fbLogin: Button = findViewById(R.id.login_button)
@@ -45,6 +49,7 @@ open class MainActivity : AppCompatActivity() {
         val forgotPassword: TextView = findViewById(R.id.forgot_password)
         val email: EditText = findViewById(R.id.edit_email)
         val password: EditText = findViewById(R.id.edit_password)
+
 
         //auth = Firebase.auth
         auth = FirebaseAuth.getInstance()
@@ -95,10 +100,11 @@ open class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    checkUser()
                     // Sign in success, update UI with the signed-in user's information
-                        Toast.makeText(this, "signInWithEmail:success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "signInWithEmail:success", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, "signInWithEmail:success")
-                    val intent7 = Intent(this, HomepageActivity::class.java)
+                    val intent7 = Intent(this, MainActivity2::class.java)
                     startActivity(intent7)
                     val user = auth.currentUser
                     updateUI(user)
@@ -111,7 +117,21 @@ open class MainActivity : AppCompatActivity() {
             }
     }
 
+    private fun checkUser(){
+        val firebaseUser = auth.currentUser!!
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        ref.child(firebaseUser.uid).addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Toast.makeText(this@MainActivity, "success", Toast.LENGTH_SHORT).show()
+            }
 
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+    }
 
 //    private fun DoGoogleSignIn() {
 //        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
