@@ -51,13 +51,13 @@
         <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/add_education.xml" value="0.1" />
         <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/add_skill.xml" value="0.1" />
-        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
-        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_education.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_edit_profile.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_education.xml" value="0.33" />
         <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_home_page.xml" value="0.1" />
-        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_skills.xml" value="0.1" />
-        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_user.xml" value="0.1" />
-        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/list_edu.xml" value="0.1" />
-        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/list_skill.xml" value="0.1" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_skills.xml" value="0.33" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/fragment_user.xml" value="0.33" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/list_edu.xml" value="0.33" />
+        <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/layout/list_skill.xml" value="0.25" />
         <entry key="..\:/Users/USER/Documents/GitHub/JobAlley/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
       </map>
     </option>

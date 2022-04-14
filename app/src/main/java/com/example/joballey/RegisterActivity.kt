@@ -44,6 +44,7 @@ class RegisterActivity : AppCompatActivity()
     //private lateinit var usercpassword: String
     private lateinit var gender: String
     private lateinit  var eduLv: String
+    private lateinit var profilePic:String
 
 
 
@@ -100,6 +101,7 @@ class RegisterActivity : AppCompatActivity()
             usertel = telNo.text.toString()
             useremail = email.text.toString()
             userpassword = password.text.toString()
+            profilePic = ""
 
 
             validateName()
@@ -119,7 +121,8 @@ class RegisterActivity : AppCompatActivity()
                 usertel,
                 eduLv,
                 useremail,
-                userpassword
+                userpassword,
+                profilePic
             )
 
             auth.createUserWithEmailAndPassword(useremail, userpassword).addOnSuccessListener {

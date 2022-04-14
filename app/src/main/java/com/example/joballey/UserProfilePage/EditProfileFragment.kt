@@ -1,21 +1,33 @@
 package com.example.joballey.UserProfilePage
 
+import android.app.Activity
+import android.content.ContentValues
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import com.example.joballey.R
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.joballey.databinding.FragmentEditProfileBinding
 import com.example.joballey.data.UserData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.StorageReference
+import java.lang.Exception
 
 class EditProfileFragment : Fragment() {
     private lateinit var binding: FragmentEditProfileBinding
@@ -23,8 +35,8 @@ class EditProfileFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
     private lateinit var storageReference: StorageReference
-    private lateinit var imageUri: Uri
-    private lateinit var uid:String
+    private var imageUri: Uri? = null
+    private lateinit var uid: String
 
 
     override fun onCreateView(
@@ -43,101 +55,109 @@ class EditProfileFragment : Fragment() {
         //firebase auth
         auth = FirebaseAuth.getInstance()
         val currentUser = FirebaseAuth.getInstance().currentUser
+        loadPic()
+        changeProfButton.setOnClickListener {
+            pickImageGallery()
+        }
 
 
-        done.setOnClickListener{
+        done.setOnClickListener {
 
             val name = binding.inputName.text.toString()
             val email = binding.inputMail.text.toString()
             val telNo = binding.inputPhone.text.toString()
             val des = binding.inputDes.text.toString()
+            val uri = imageUri.toString()
+
 
             validateName()
             validateTel()
             validateEmail()
 
-            database = FirebaseDatabase.getInstance("https://job-alley-3f825-default-rtdb.firebaseio.com/").getReference("Users")
-            val user = UserData(name, email, telNo, des)
+            database =
+                FirebaseDatabase.getInstance("https://job-alley-3f825-default-rtdb.firebaseio.com/")
+                    .getReference("Users")
 
             if (currentUser != null) {
-                database.child(currentUser.uid).setValue(user).addOnSuccessListener {
-                    Toast.makeText(requireContext(), "Successfully Saved", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_educationFragment_to_userFragment)
-                }.addOnFailureListener {
-                    Toast.makeText(requireContext(), "Upload Failed", Toast.LENGTH_SHORT).show()
-                }
+                database.child(currentUser.uid).child("name").setValue(name)
+                database.child(currentUser.uid).child("email").setValue(email)
+                database.child(currentUser.uid).child("telNO").setValue(telNo)
+                database.child(currentUser.uid).child("des").setValue(des)
+                database.child(currentUser.uid).child("profilePic").setValue(uri)
+
             }
+            Toast.makeText(requireContext(), "Profile Updated Successfully!!", Toast.LENGTH_SHORT)
+                .show()
+            findNavController().navigate(R.id.action_editProfileFragment_to_userFragment)
 
 
         }
-        cancel.setOnClickListener{
+        cancel.setOnClickListener {
             findNavController().navigate(R.id.action_editProfileFragment_to_userFragment)
         }
         backButton.setOnClickListener {
             findNavController().navigate(R.id.action_editProfileFragment_to_userFragment)
         }
-//        changeProfButton.setOnClickListener{
-//            showImageAttachMenu()
-//        }
+
         return binding.root
     }
 
-    private fun loadUserInfo() {
-        //db reference to user info
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
-        ref.child(auth.uid!!).addValueEventListener(object : ValueEventListener {
+
+    private fun pickImageGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        galleryActivityResultLauncher.launch(intent)
+    }
+
+    private val galleryActivityResultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+        ActivityResultCallback<ActivityResult> { result ->
+            //get uri of the image
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                imageUri = data!!.data
+                binding.profileImage.setImageURI(imageUri)
+                val TAG: String = "EditProfileFragment"
+                Log.d(TAG, imageUri.toString())
+            } else {
+                Toast.makeText(requireContext(), "Cancelled", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+    )
+
+    private fun loadPic() {
+        val datab =
+            FirebaseDatabase.getInstance("https://job-alley-3f825-default-rtdb.firebaseio.com/")
+        val dataRef = datab.getReference("Users").child(auth.currentUser!!.uid)
+        val eventListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val name = "${snapshot.child("name").value}"
-                val email = "${snapshot.child("email").value}"
-                val telNo = "${snapshot.child("telNo").value}"
-                val des = "${snapshot.child("des").value}"
-                val profilePic = "${snapshot.child("profilePic").value}"
+                if (snapshot.value != null) {
+                    val profilePic = snapshot.child("profilePic").value as String
 
-                //set data
-                binding.inputName.setText(name)
-                binding.inputMail.setText(email)
-                binding.inputPhone.setText(telNo)
-                binding.inputDes.setText(des)
+                    //set image
+                    try {
+                        Glide.with(requireContext())
+                            .load(profilePic)
+                            .placeholder(R.drawable.unknown)
+                            .into(binding.profileImage)
+                    } catch (e: Exception) {
 
-                //set image
-
-
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Retrieved failed", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-        })
-    }
-//    private fun showImageAttachMenu(){
-//        val popupMenu = PopupMenu(requireContext(),binding.chgProf)
-//        popupMenu.menu.add(Menu.NONE,0,0,"Camera")
-//        popupMenu.menu.add(Menu.NONE,1,1,"Gallery")
-//        popupMenu.show()
-//
-//        //handle popup menu item click
-//        popupMenu.setOnMenuItemClickListener {item->
-//            val id = item.itemId
-//
-//        }
-//    }
 
-//    private fun uploadProfilePic() {
-//        val packagename = getActivity()?.getPackageName()
-//        imageUri = Uri.parse("android.resource://$packagename/${R.drawable.unknown}")
-//        storageReference =
-//            FirebaseStorage.getInstance().getReference("Users/" + auth.currentUser?.uid)
-//        storageReference.putFile(imageUri).addOnSuccessListener {
-//            Toast.makeText(
-//                requireContext(),
-//                "Profile Picture updated successfully",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }.addOnFailureListener {
-//            Toast.makeText(requireContext(), "Failed to Update Profile Picture", Toast.LENGTH_SHORT)
-//                .show()
-//        }
-//    }
+        }
+        dataRef.addListenerForSingleValueEvent(eventListener)
+
+    }
+
 
     private fun validateName() {
         val name = binding.inputName.text.toString()

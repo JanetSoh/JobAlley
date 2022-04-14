@@ -50,19 +50,35 @@
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/baseline_edit_24" />
                     <TextView
-                        android:id="@+id/uTelNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="67dp"
+                        android:layout_marginTop="70dp"
+                        android:text="Contact:"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/uTelNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="70dp"
                         android:text="011-11111111"
                         android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="155dp"
+                        android:layout_marginTop="68dp"
+                        android:text="|"
+                        android:textSize="15sp" />
+
                     <TextView
                         android:id="@+id/uEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="110dp"
-                        android:layout_marginTop="67dp"
+                        android:layout_marginStart="165dp"
+                        android:layout_marginTop="70dp"
                         android:text="lamwh-wm20@student.tarc.edu.my"
                         android:textSize="13sp" />
 
@@ -71,9 +87,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="90dp"
+                        android:layout_marginTop="95dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@color/black"
                         android:text="@string/personal_detail"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -190,7 +208,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/edu_list"
                         android:layout_width="match_parent"
-                        android:layout_height="91dp"
+                        android:layout_height="110dp"
                         android:layout_marginStart="25dp"
                         android:layout_marginTop="45dp"
                         android:layout_marginEnd="15dp"
@@ -213,6 +231,7 @@
                 app:srcCompat="@drawable/_73841" />
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
                 android:layout_width="98dp"
                 android:layout_height="98dp"
                 android:layout_marginTop="30dp"

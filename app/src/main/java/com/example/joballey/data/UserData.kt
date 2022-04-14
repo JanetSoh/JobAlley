@@ -8,7 +8,9 @@ data class UserData(
     val telNO:String? = null,
     val educationLv:String? = null,
     val email:String? = null,
-    val password:String? = null
+    val password:String? = null,
+    val des :String? =null,
+    val profilePic:String =""
 
 )
 
