@@ -3,6 +3,7 @@ package com.example.joballey
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -25,15 +26,20 @@ class ForgotPasswordActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         reset_password.setOnClickListener {
-            auth.sendPasswordResetEmail(editEmail.text.toString())
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Email sent.", Toast.LENGTH_SHORT).show()
-                        finish()
-                    } else {
-                        Toast.makeText(this, "No email sent.", Toast.LENGTH_SHORT).show()
+            if(TextUtils.isEmpty(editEmail.text.toString())) {
+                Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                auth.sendPasswordResetEmail(editEmail.text.toString())
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Email sent.", Toast.LENGTH_SHORT).show()
+                            finish()
+                        } else {
+                            Toast.makeText(this, "No email sent.", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }
+            }
         }
 
         back.setOnClickListener {
