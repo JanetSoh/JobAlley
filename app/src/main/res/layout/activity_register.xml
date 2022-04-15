@@ -7,6 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/background"
     tools:context=".RegisterActivity"
     tools:viewBindingIgnore="true">
 
@@ -25,345 +26,344 @@
             android:orientation="vertical">
 
 
-        <ImageButton
-        android:id="@+id/imageBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:background="#0000FFFF"
-        android:contentDescription="@string/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_button"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            <ImageButton
+                android:id="@+id/imageBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="#0000FFFF"
+                android:contentDescription="@string/back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back_button"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 
-    <TextView
-        android:id="@+id/text_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:text="@string/registration"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/text_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/registration"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/name"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_register" />
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/name"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_register" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toEndOf="@+id/text_name"
-        app:layout_constraintTop_toBottomOf="@+id/text_register"
-        tools:ignore="DuplicateSpeakableTextCheck,LabelFor,TextContrastCheck,TextContrastCheck" />
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toEndOf="@+id/text_name"
+                app:layout_constraintTop_toBottomOf="@+id/text_register"
+                tools:ignore="DuplicateSpeakableTextCheck,LabelFor,TextContrastCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/text_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/gender"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_name" />
+            <TextView
+                android:id="@+id/text_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/gender"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_name" />
 
-    <RadioGroup
-        android:id="@+id/radio_gender"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_gender"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+            <RadioGroup
+                android:id="@+id/radio_gender"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_gender"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
 
-        <RadioButton
-            android:id="@+id/gender_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/input_bg"
-            android:paddingStart="20dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/female"
-            android:textColor="#00838F"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
+                <RadioButton
+                    android:id="@+id/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_bg"
+                    android:paddingStart="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/female"
+                    android:textColor="#00838F"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-        <RadioButton
-            android:id="@+id/gender_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/input_bg"
-            android:paddingStart="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/male"
-            android:textColor="#00838F"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_bg"
+                    android:paddingStart="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/male"
+                    android:textColor="#00838F"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+            </RadioGroup>
 
-    <TextView
-        android:id="@+id/text_dob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/date_of_birth"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_gender" />
+            <TextView
+                android:id="@+id/text_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/date_of_birth"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_gender" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:hint="@string/dd_mm_yyyy"
-        android:inputType="date"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        android:textColorHint="#00838F"
-        app:layout_constraintStart_toEndOf="@+id/text_dob"
-        app:layout_constraintTop_toBottomOf="@+id/radio_gender"
-        tools:ignore="TextContrastCheck,TextContrastCheck" />
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:hint="@string/dd_mm_yyyy"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:textColorHint="#00838F"
+                app:layout_constraintStart_toEndOf="@+id/text_dob"
+                app:layout_constraintTop_toBottomOf="@+id/radio_gender"
+                tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/text_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/address"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dob" />
+            <TextView
+                android:id="@+id/text_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="44dp"
+                android:text="@string/address"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_dob" />
 
-    <EditText
-        android:id="@+id/editTextTextAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textPostalAddress"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toEndOf="@+id/text_address"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            <EditText
+                android:id="@+id/editTextTextAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.409"
+                app:layout_constraintStart_toEndOf="@+id/text_address"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
-    <TextView
-        android:id="@+id/text_tel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/tel_no"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_address" />
-
-
-    <EditText
-        android:id="@+id/editTextTel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.639"
-        app:layout_constraintStart_toEndOf="@+id/text_tel"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
-
-    <TextView
-        android:id="@+id/textEducationLv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/education_level"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_tel" />
-
-    <Spinner
-        android:id="@+id/spinner_educationLv"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/registration"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toEndOf="@+id/textEducationLv"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTel"
-        tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
-
-    <TextView
-        android:id="@+id/textREmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/email"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEducationLv" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="12dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toEndOf="@+id/textREmail"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_educationLv" />
-
-    <TextView
-        android:id="@+id/textRPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/password"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textREmail" />
-
-    <EditText
-        android:id="@+id/editRPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:paddingStart="20dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textRPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+            <TextView
+                android:id="@+id/text_tel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/tel_no"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_address" />
 
 
+            <EditText
+                android:id="@+id/editTextTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.639"
+                app:layout_constraintStart_toEndOf="@+id/text_tel"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
 
-    <TextView
-        android:id="@+id/textRResume"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/upload_resume"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRPassword" />
+            <TextView
+                android:id="@+id/textEducationLv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/education_level"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_tel" />
 
-    <Button
-        android:id="@+id/register_now"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/input_bg"
-        android:text="@string/register_now"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upload_resume"
-        tools:viewBindingType="Button" />
+            <Spinner
+                android:id="@+id/spinner_educationLv"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/registration"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintStart_toEndOf="@+id/textEducationLv"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTel"
+                tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
 
-    <Button
-        android:id="@+id/upload_resume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/input_bg"
-        android:drawableEnd="@drawable/ic_attach_file"
-        android:text="@string/upload_resume"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintStart_toEndOf="@+id/textRResume"
-        app:layout_constraintTop_toBottomOf="@+id/editRPassword" />
+            <TextView
+                android:id="@+id/textREmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/email"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textEducationLv" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toEndOf="@+id/textREmail"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_educationLv" />
+
+            <TextView
+                android:id="@+id/textRPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/password"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textREmail" />
+
+            <EditText
+                android:id="@+id/editRPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:paddingStart="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textRPassword"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+
+
+            <TextView
+                android:id="@+id/textRResume"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/upload_resume"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textRPassword" />
+
+            <Button
+                android:id="@+id/register_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/input_bg"
+                android:text="@string/register_now"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upload_resume"
+                tools:viewBindingType="Button" />
+
+            <Button
+                android:id="@+id/upload_resume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/input_bg"
+                android:drawableEnd="@drawable/ic_attach_file"
+                android:text="@string/upload_resume"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.06"
+                app:layout_constraintStart_toEndOf="@+id/textRResume"
+                app:layout_constraintTop_toBottomOf="@+id/editRPassword" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
