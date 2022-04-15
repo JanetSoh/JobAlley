@@ -50,14 +50,14 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:layout_below="@+id/textView"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="20dp"
             android:layout_toRightOf="@+id/searchView"
-            card_view:srcCompat="@drawable/_111111" />
+            card_view:srcCompat="@drawable/baseline_email_24" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_home"
