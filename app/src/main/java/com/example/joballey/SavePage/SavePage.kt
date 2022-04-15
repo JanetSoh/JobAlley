@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment_mad.SaveJobAdapter
 import com.example.joballey.R
-import com.example.joballey.databinding.FragmentSavePageBinding
 import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList

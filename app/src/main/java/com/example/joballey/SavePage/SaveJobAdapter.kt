@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.joballey.R
@@ -37,9 +39,14 @@ class SaveJobAdapter(private var context: Context, private val savedCompany:Arra
         holder.company_name.text=currentItem.name
         holder.place.text=currentItem.place
         holder.salary.text=currentItem.salary
+        holder.button.setOnClickListener{ChangeColor()}
 
 
 
+    }
+
+    private fun ChangeColor() {
+        Toast.makeText(context,"Applied", Toast.LENGTH_SHORT).show()
     }
 
     override fun getItemCount(): Int {
@@ -54,6 +61,10 @@ class SaveJobAdapter(private var context: Context, private val savedCompany:Arra
         val company_name:TextView=itemView.findViewById(R.id.save_companyname)
         val place:TextView=itemView.findViewById(R.id.save_place)
         val salary:TextView=itemView.findViewById(R.id.save_salary)
+
+
+
+        val button: Button =itemView.findViewById(R.id.save_applybutton)
 
         init {
             itemView.setOnClickListener{
