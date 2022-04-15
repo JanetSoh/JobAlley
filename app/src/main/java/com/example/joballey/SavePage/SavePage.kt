@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment_mad.SaveJobAdapter
 import com.example.joballey.R
+import com.example.joballey.databinding.FragmentSavePageBinding
 import com.google.firebase.database.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -31,8 +32,7 @@ class SavePage : Fragment() {
     lateinit var salary:Array<String>
     lateinit var news:Array<String>
 
-    private var _binding:FragmentSavePageBinding?=null
-    private val binding get()=_binding!!
+    private lateinit var binding: FragmentSavePageBinding
 //    private lateinit var apply:Button
 
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -42,7 +42,7 @@ class SavePage : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding= FragmentSavePageBinding.inflate(inflater,container,false)
+        binding= FragmentSavePageBinding.inflate(inflater,container,false)
         val views=binding.root
 
 
@@ -55,10 +55,10 @@ class SavePage : Fragment() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding=null
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        binding=null
+//    }
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
 

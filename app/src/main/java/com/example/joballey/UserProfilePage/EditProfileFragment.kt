@@ -56,6 +56,7 @@ class EditProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         val currentUser = FirebaseAuth.getInstance().currentUser
         loadPic()
+
         changeProfButton.setOnClickListener {
             pickImageGallery()
         }
