@@ -65,5 +65,6 @@
     <fragment
         android:id="@+id/jobsListFragment"
         android:name="com.example.joballey.JobsListFragment"
-        android:label="JobsListFragment" />
+        android:label="JobsListFragment"
+        tools:layout="@layout/fragment_jobs_list"/>
 </navigation>

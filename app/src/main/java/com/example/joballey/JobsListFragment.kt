@@ -42,7 +42,7 @@ class JobsListFragment : Fragment() {
 
 
         apply= views.findViewById(R.id.save_applybutton)
-        newRecyclerView=views.findViewById(R.id.recyclerView_Save)
+        newRecyclerView=views.findViewById(R.id.recyclerView_home)
         newArrayList= arrayListOf<DataClass>()
         tempArrayList= arrayListOf<DataClass>()
 
