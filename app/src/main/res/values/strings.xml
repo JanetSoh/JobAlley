@@ -162,15 +162,10 @@
     <string name="myr_3_700_4_300_month">MYR 3,700 - 4,300 /Month</string>
     <string name="apply">Apply</string>
     <string name="save_image">save_image</string>
-    <string name="gradute_engineer">Gradute Engineer</string>
-    <string name="neric_compat">Neric Compat</string>
-    <string name="petaling_jaya">Petaling Jaya</string>
-    <string name="myr_3_700_4_300_month">MYR 3,700 - 4,300 /Month</string>
     <string name="search">Search</string>
     <string name="area_city_or_town">Area, City or Town</string>
     <string name="job_specialize">Job Specialize</string>
     <string name="textview">TextView</string>
-    <string name="welcome_to_our_application_job_alley">Welcome to our application Job Alley</string>
     <string name="hello_my_user_welcome_and_thank_for_download_our_application_hope_that_you_have_a_nice_day_and_success_find_your_favorite_job_with_our_application">Hello, my user. Welcome and thank for download our application, hope that you have a nice day and success find your favorite job with our application.</string>
 
     <string-array name="place">
