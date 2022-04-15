@@ -19,6 +19,15 @@
         app:shapeAppearanceOverlay="@style/RoundCorner"
         android:src="@drawable/company_logo_1"/>
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="10dp"
+        android:layout_height="216dp"
+        style="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#C57A53"/>
+
     <TextView
         android:id="@+id/save_jobname"
         android:layout_width="0dp"

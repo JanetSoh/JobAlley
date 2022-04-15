@@ -19,6 +19,15 @@
         app:shapeAppearanceOverlay="@style/RoundCorner"
         android:src="@drawable/company_logo_1"/>
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="10dp"
+        android:layout_height="216dp"
+        style="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#C57A53"/>
+
     <TextView
         android:id="@+id/search_jobname"
         android:layout_width="0dp"
@@ -35,8 +44,8 @@
 
     <ImageButton
         android:id="@+id/searchjob_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_gravity="end"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
@@ -45,7 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_image"
         app:srcCompat="@drawable/ic_baseline_favorite_24"
-        app:tint="@color/red" />
+        app:tint="@color/red"
+        tools:ignore="ContentDescription" />
 
 
     <TextView
@@ -96,7 +106,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/buttonshape"
-        android:text="Apply"
+        android:text="@string/apply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchjob_icon"
         tools:viewBindingType="Button" />
