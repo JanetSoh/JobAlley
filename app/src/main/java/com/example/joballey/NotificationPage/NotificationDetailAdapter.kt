@@ -1,4 +1,4 @@
-package com.example.assignment_mad
+package com.example.joballey.NotificationPage
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,13 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.joballey.NotificationPage.Notification
 import com.example.joballey.R
 import com.google.android.material.imageview.ShapeableImageView
 
-
-
-class NotificationAdapter(private var context: Context, private val notificationlist:ArrayList<Notification>):RecyclerView.Adapter<NotificationAdapter.MyViewHolder>() {
+class NotificationDetailAdapter (private var context: Context, private val detaillist:ArrayList<Detail>):RecyclerView.Adapter<NotificationDetailAdapter.MyViewHolder>() {
 
     private var mListener: onItemClickListener?=null
 
@@ -33,25 +30,32 @@ class NotificationAdapter(private var context: Context, private val notification
     }
 
 
+
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationAdapter.MyViewHolder {
+//
+//        val itemView=LayoutInflater.from(parent.context).inflate(R.layout.list_item,parent,false)
+//        return MyViewHolder(itemView)
+//    }
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = notificationlist[position]
+        val currentItem = detaillist[position]
         //holder.titleImage.text=currentItem.titleImage
-        currentItem?.titleImage?.let {
-            Glide.with(context).load(currentItem.titleImage).into(holder.imageNotification)
+        currentItem?.imageD?.let {
+            Glide.with(context).load(currentItem.imageD).into(holder.titleImage)
         }
         holder.heading.text = currentItem.heading
+        holder.content.text=currentItem.content
     }
 
     override fun getItemCount(): Int {
-        return notificationlist.size
+        return detaillist.size
     }
 
     class MyViewHolder(itemView: View, listener: onItemClickListener?) : RecyclerView.ViewHolder(itemView) {
 
-        val imageNotification: ShapeableImageView = itemView.findViewById(R.id.notification_image)
-
-        //val titleImage: TextView =itemView.findViewById(R.id.title_image)
-        val heading: TextView = itemView.findViewById(R.id.notification_heading)
+        val titleImage: ShapeableImageView = itemView.findViewById(R.id.image_heading)
+        val content: TextView =itemView.findViewById(R.id.news)
+        val heading: TextView = itemView.findViewById(R.id.heading)
 
         init {
             itemView.setOnClickListener {
@@ -60,5 +64,4 @@ class NotificationAdapter(private var context: Context, private val notification
         }
 
     }
-
 }

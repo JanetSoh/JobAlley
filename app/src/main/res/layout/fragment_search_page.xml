@@ -11,61 +11,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/titlePlace"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Search Job"
-            android:inputType="text"
-            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:text="@string/area_city_or_town"
+            android:textSize="16sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
             android:id="@+id/spinner_place"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:minWidth="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titlePlace"
+            android:autofillHints="Place"
+
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:hint="Area, City or Town"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar"
-            app:startIconDrawable="@drawable/ic_baseline_place_24">
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="3dp" />
 
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="none"
-                android:paddingTop="0dp"
-                android:paddingBottom="1dp"
-                android:text="All" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/titleJob"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/job_specialize"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <Spinner
             android:id="@+id/spinner_job"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:minWidth="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleJob"
+            android:autofillHints="Place"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
-            android:hint="Job Specialize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar"
-            app:startIconDrawable="@drawable/ic_baseline_apartment_24">
-
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:inputType="none"
-                android:paddingTop="0dp"
-                android:paddingBottom="1dp"
-                android:text="All" />
-        </com.google.android.material.textfield.TextInputLayout>
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="3dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_Search"

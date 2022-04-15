@@ -7,24 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment_mad.NotificationAdapter
 import com.example.joballey.R
-import com.example.joballey.data.Company
+import com.example.joballey.databinding.FragmentNotificationPageBinding
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class NotificationPage : Fragment() {
-    val database= Firebase.database
-    val myRef=database.getReference("message")
+    private var _binding:FragmentNotificationPageBinding?=null
+    private val binding get()=_binding!!
+
+    private lateinit var dbref: DatabaseReference
 
     private lateinit var newRecyclerView: RecyclerView
-    private lateinit var newArrayList: ArrayList<Company>
-    private lateinit var tempArrayList: ArrayList<Company>
-    lateinit var imageId:Array<Int>
-    lateinit var heading:Array<String>
-    lateinit var news:Array<String>
+    private lateinit var newArrayList: ArrayList<Notification>
+    private lateinit var tempArrayList: ArrayList<Notification>
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<NotificationAdapter.MyViewHolder>? = null
@@ -33,113 +34,76 @@ class NotificationPage : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var views =inflater.inflate(R.layout.fragment_notification_page, container, false)
+        _binding= FragmentNotificationPageBinding.inflate(inflater,container,false)
+        val views =binding.root
+
         newRecyclerView=views.findViewById(R.id.recyclerView)
+        newArrayList= arrayListOf<Notification>()
+        tempArrayList= arrayListOf<Notification>()
 
-        // Inflate the layout for this fragment
-        return views
+        var adapter= NotificationAdapter(requireContext(),newArrayList)
+        adapter.setOnItemClickListener(object : NotificationAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                findNavController().navigate(R.id.action_notificationPage2_to_notificationDetail)
+            }
 
+        })
 
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
     }
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(itemView, savedInstanceState)
-
-        imageId= arrayOf(
-            R.drawable.company_logo_1,
-            R.drawable.company_logo_2,
-            R.drawable.company_logo_3,
-            R.drawable.company_logo_4,
-            R.drawable.company_logo_5,
-            R.drawable.company_logo_6,
-            R.drawable.company_logo_7,
-            R.drawable.company_logo_8,
-            R.drawable.company_logo_9,
-            R.drawable.company_logo_10
-        )
-
-        heading= arrayOf(
-            "Candidate Biden Called Saudi Arable a Pareft eaft.",
-            "The definitive text on the healing powers of the mind/body connection.",
-            "This is the definitive book on mindfulness from the beloved Zen master.",
-            "A timeless classic in personal development.",
-            "The definitive text on the healing powers of the mind/body connection.",
-            "The definitive text on the healing powers of the mind/body connection.",
-            "The definitive text on the healing powers of the mind/body connection.",
-            "The definitive text on the healing powers of the mind/body connection.",
-            "The definitive text on the healing powers of the mind/body connection.",
-            "The definitive text on the healing powers of the mind/body connection."
-        )
-
-        news= arrayOf(
-            getString(R.string.news_a),
-            getString(R.string.news_b),
-            getString(R.string.news_c),
-            getString(R.string.news_d),
-            getString(R.string.news_e),
-            getString(R.string.news_f),
-            getString(R.string.news_g),
-            getString(R.string.news_h),
-            getString(R.string.news_i),
-            getString(R.string.news_j)
-        )
-
-
-
-
-        newArrayList= arrayListOf<Company>()
-        tempArrayList= arrayListOf<Company>()
         getUserdata()
-
-
-
-//        newRecyclerView.apply {
-//            layoutManager=LinearLayoutManager(activity)
-//            newRecyclerView.setHasFixedSize(true)
-//
-//        }
-//
-//
-//        recyclerView.apply {
-//            // set a LinearLayoutManager to handle Android
-//            // RecyclerView behavior
-//            layoutManager = LinearLayoutManager(activity)
-//            // set the custom adapter to the RecyclerView
-//            adapter = NotificationAdapter(newArrayList)
-//        }
-
-
-
     }
 
 
     private fun getUserdata() {
-        for (i in imageId.indices){
-            val company=Company(imageId[i],heading[i])
-            newArrayList.add(company)
-        }
+        dbref = FirebaseDatabase.getInstance("https://job-alley-3f825-default-rtdb.firebaseio.com/")
+            .getReference("Notification")
+        dbref.addValueEventListener(object : ValueEventListener {
 
-//        tempArrayList.addAll(newArrayList)
-//
-//        val adapter = Notification_Fragment(tempArrayList)
+            override fun onDataChange(snapshot: DataSnapshot) {
 
-        var adapter= NotificationAdapter(newArrayList)
-        adapter.setOnItemClickListener(object : NotificationAdapter.onItemClickListener{
-            override fun onItemClick(position: Int) {
-                Toast.makeText(context,"You clicked in item no . $position", Toast.LENGTH_SHORT).show()
+                if (snapshot.exists()) {
 
-                val intent= Intent(context, NotificationDetail::class.java)
-                intent.putExtra("heading",newArrayList[position].heading)
-                intent.putExtra("imageId",newArrayList[position].titleImage)
-                intent.putExtra("news",news[position])
-                startActivity(intent)
+                    for (userSnapshot in snapshot.children) {
+
+
+                        val notification = userSnapshot.getValue(Notification::class.java)
+                        newArrayList.add(notification!!)
+                        tempArrayList.addAll(newArrayList)
+                        //tempArrayList.add(company!!)
+
+                    }
+
+                    newRecyclerView.adapter = NotificationAdapter(requireContext(),newArrayList)
+
+
+
+                }
+
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+
         })
 
-        newRecyclerView.layoutManager= LinearLayoutManager(activity)
+
+        newRecyclerView.layoutManager=LinearLayoutManager(activity)
         newRecyclerView.setHasFixedSize(true)
         newRecyclerView.adapter=adapter
+
     }
+
 
 }

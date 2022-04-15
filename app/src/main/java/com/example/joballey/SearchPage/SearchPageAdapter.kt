@@ -1,16 +1,21 @@
 package com.example.assignment_mad
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.joballey.R
+import com.example.joballey.SearchPage.SearchJob
 import com.google.android.material.imageview.ShapeableImageView
 
-class SearchPageAdapter(private val companysList:ArrayList<CompanySearch>):RecyclerView.Adapter<SearchPageAdapter.MyViewHolder>() {
-
+class SearchPageAdapter(private var context: Context, private val companysList:ArrayList<SearchJob>):RecyclerView.Adapter<SearchPageAdapter.MyViewHolder>() {
     private var mListener:onItemClickListener?=null
+
 
     interface onItemClickListener{
         fun onItemClick(position: Int)
@@ -28,15 +33,20 @@ class SearchPageAdapter(private val companysList:ArrayList<CompanySearch>):Recyc
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem=companysList[position]
-        holder.titleImage.setImageResource(currentItem.titleImage)
-        holder.job_name.text=currentItem.job_name
-        holder.save_icon.setImageResource(currentItem.save_icon)
-        holder.company_name.text=currentItem.company_name
+        currentItem.image?.let { Glide.with(context).load(currentItem.image).into(holder.titleImage) }
+        holder.job_name.text=currentItem.jobname
+        holder.company_name.text=currentItem.name
         holder.place.text=currentItem.place
         holder.salary.text=currentItem.salary
+        holder.button.setOnClickListener{ChangeColor()}
 
 
     }
+
+    private fun ChangeColor() {
+        Toast.makeText(context,"Applied", Toast.LENGTH_SHORT).show()
+    }
+
 
     override fun getItemCount(): Int {
         return companysList.size
@@ -45,12 +55,14 @@ class SearchPageAdapter(private val companysList:ArrayList<CompanySearch>):Recyc
     //to insert the post detail
     class MyViewHolder(itemView: View,listener: onItemClickListener?):RecyclerView.ViewHolder(itemView){
 
-        val titleImage:ShapeableImageView=itemView.findViewById(R.id.title_image2)
-        val job_name:TextView=itemView.findViewById(R.id.job_name)
-        val save_icon:ShapeableImageView=itemView.findViewById(R.id.save_icon)
-        val company_name:TextView=itemView.findViewById(R.id.company_name)
-        val place:TextView=itemView.findViewById(R.id.detail_place)
-        val salary:TextView=itemView.findViewById(R.id.detail_salary)
+        val titleImage:ShapeableImageView=itemView.findViewById(R.id.search_image)
+        val job_name:TextView=itemView.findViewById(R.id.search_jobname)
+        val company_name:TextView=itemView.findViewById(R.id.search_companyname)
+        val place:TextView=itemView.findViewById(R.id.search_place)
+        val salary:TextView=itemView.findViewById(R.id.search_salary)
+        val button: Button =itemView.findViewById(R.id.search_applubutton)
+
+
 
         init {
             itemView.setOnClickListener{

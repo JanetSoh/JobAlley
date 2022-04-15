@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,7 +11,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/title_image2"
+        android:id="@+id/search_image"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,74 +20,86 @@
         android:src="@drawable/company_logo_1"/>
 
     <TextView
-        android:id="@+id/job_name"
+        android:id="@+id/search_jobname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/blue"
-        android:text="Gradute Engineer"
+        android:text="@string/gradute_engineer"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_image2"/>
+        app:layout_constraintTop_toBottomOf="@+id/search_image"/>
 
-
-
-
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageButton
+        android:id="@+id/searchjob_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:id="@+id/save_icon"
-        android:scaleType="centerCrop"
+        android:layout_gravity="end"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="#0000FFFF"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_image2"
-        android:layout_marginEnd="32dp"
-        app:shapeAppearanceOverlay="@style/RoundCorner"
-        android:src="@drawable/ic_baseline_bookmark_added_24"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/search_image"
+        app:srcCompat="@drawable/ic_baseline_favorite_24"
+        app:tint="@color/red" />
 
 
     <TextView
-        android:id="@+id/company_name"
+        android:id="@+id/search_companyname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="Neric Compat"
+        android:text="@string/neric_compat"
         android:textSize="18sp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/job_name"/>
+        app:layout_constraintTop_toBottomOf="@+id/search_jobname"/>
 
     <TextView
-        android:id="@+id/detail_place"
+        android:id="@+id/search_place"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="Petaling Jaya"
+        android:text="@string/petaling_jaya"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/company_name"/>
+        app:layout_constraintTop_toBottomOf="@+id/search_companyname"/>
 
     <TextView
-        android:id="@+id/detail_salary"
+        android:id="@+id/search_salary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="MYR 3,700 - 4,300 /Month"
+        android:text="@string/myr_3_700_4_300_month"
         android:textSize="16sp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_place"/>
+        app:layout_constraintTop_toBottomOf="@+id/search_place"/>
+
+
+    <Button
+        android:id="@+id/search_applubutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/buttonshape"
+        android:text="Apply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchjob_icon"
+        tools:viewBindingType="Button" />
 
     <View
         android:layout_width="match_parent"
@@ -94,7 +107,7 @@
         android:layout_margin="8dp"
         style="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_salary"
+        app:layout_constraintTop_toBottomOf="@+id/search_salary"
         android:background="@color/underline"/>
 
 

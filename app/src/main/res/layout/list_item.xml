@@ -9,7 +9,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/title_image"
+        android:id="@+id/notification_image"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,18 +17,18 @@
         android:src="@drawable/company_logo_1"/>
 
     <TextView
-        android:id="@+id/tvHeading"
+        android:id="@+id/notification_heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:text="Candidate Biden Called Saudi Arable a Pareft eaft."
-        android:textSize="16dp"
+        android:text="@string/welcome_to_our_application_job_alley"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/title_image"
+        app:layout_constraintStart_toEndOf="@+id/notification_image"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <View
@@ -36,7 +36,7 @@
         android:layout_height="1dp"
         android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_image"
+        app:layout_constraintTop_toBottomOf="@+id/notification_image"
         android:background="@color/underline"/>
 
 
