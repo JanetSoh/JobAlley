@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homePage">
+    app:startDestination="@id/jobsListFragment">
 
     <fragment
         android:id="@+id/userFragment"
@@ -48,11 +48,6 @@
             app:destination="@id/userFragment" />
     </fragment>
     <fragment
-        android:id="@+id/homePage"
-        android:name="com.example.joballey.HomePage"
-        android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
-    <fragment
         android:id="@+id/notificationPage"
         android:name="com.example.joballey.NotificationPage.NotificationPage"
         android:label="fragment_notification_page"
@@ -67,4 +62,8 @@
         android:name="com.example.joballey.SearchPage.SearchPage"
         android:label="fragment_search_page"
         tools:layout="@layout/fragment_search_page" />
+    <fragment
+        android:id="@+id/jobsListFragment"
+        android:name="com.example.joballey.JobsListFragment"
+        android:label="JobsListFragment" />
 </navigation>
