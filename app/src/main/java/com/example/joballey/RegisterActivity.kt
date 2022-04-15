@@ -135,6 +135,7 @@ class RegisterActivity : AppCompatActivity()
                     }
                 }
                 Toast.makeText(this, "createUserWithEmail: success", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this,MainActivity::class.java))
             }.addOnFailureListener {
                 Toast.makeText(this, "createUserWithEmail: failed", Toast.LENGTH_SHORT).show()
             }
