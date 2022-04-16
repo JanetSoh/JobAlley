@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,7 @@ class SearchPageAdapter(private var context: Context, private val companysList:A
         holder.place.text=currentItem.place
         holder.salary.text=currentItem.salary
         holder.button.setOnClickListener{ChangeColor()}
+        holder.love.setOnClickListener { ChangeColor2()}
 
 
     }
@@ -47,6 +49,9 @@ class SearchPageAdapter(private var context: Context, private val companysList:A
         Toast.makeText(context,"Applied", Toast.LENGTH_SHORT).show()
     }
 
+    private fun ChangeColor2() {
+        Toast.makeText(context,"Success add to favourite",Toast.LENGTH_SHORT).show()
+    }
 
     override fun getItemCount(): Int {
         return companysList.size
@@ -61,6 +66,7 @@ class SearchPageAdapter(private var context: Context, private val companysList:A
         val place:TextView=itemView.findViewById(R.id.search_place)
         val salary:TextView=itemView.findViewById(R.id.search_salary)
         val button: Button =itemView.findViewById(R.id.search_applubutton)
+        val love: ImageButton =itemView.findViewById(R.id.searchjob_icon)
 
 
 

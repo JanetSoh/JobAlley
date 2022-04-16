@@ -40,7 +40,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_image"/>
+        app:layout_constraintTop_toBottomOf="@+id/home_image"/>
 
     <ImageButton
         android:id="@+id/home_icon"
@@ -52,7 +52,7 @@
         android:background="#0000FFFF"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_image"
+        app:layout_constraintTop_toBottomOf="@+id/home_image"
         app:srcCompat="@drawable/ic_baseline_favorite_24"
         android:contentDescription="@string/save_image"
         app:tint="@color/red" />
